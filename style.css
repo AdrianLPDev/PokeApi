@@ -1,0 +1,451 @@
+html {
+    /*Variables colores título 'POKÉMON' rgb*/
+    --colorBlue: 10, 40, 95;
+    --colorLightBlue: 0, 117, 190;
+    --colorGold: 213, 161, 0;
+    --colorYellow: 255, 204, 0;
+    /*Variabls medidas web responsive*/
+    --alto: 100vh;
+    --ancho: 100vw;
+}
+body {
+    margin:0;
+    padding:0;
+}
+main {
+    width:100vw;
+    max-width: 100%;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(var(--colorBlue));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+    margin:0;
+    padding:0;
+}
+/*IMG - Pokémon*/
+header > img {
+    width: 25vw;
+}
+div > img{
+    width: 5vw;
+}
+
+h1 {
+    /*Display*/
+    width:100%;
+    height: 100%;
+    display: none;
+    margin: 0;
+    /*Fuente*/
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+}
+/*
+* Pongo en práctica lo aprendido con Ángel utilizando lo último visto, @supports
+* Si acepta -webkit y sus funciones, quitamos la imagen y ponemos 'PoKéMoN' con texto,
+* si no, dejamos sólo la imagen para que quede bonito
+*/
+@supports (-webkit-background-clip: text) and (-webkit-text-stroke: .5vw transparent) {
+    /*Ocultamos el img*/
+    header > img {
+        display: none;
+    }
+    /*Le damos los valores y sacamos el h1 a la luz*/
+    h1 {
+        /*Display*/
+        display: inherit;
+        /*Colores*/
+        background: -webkit-linear-gradient(-86deg, rgba(var(--colorBlue),1) 5%, rgba(var(--colorLightBlue),1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1.5vw transparent;
+        color: rgba(var(--colorYellow),.97);
+
+    }
+}
+form {
+    width: 100%;
+    height: 2.5%;
+    display:flex;
+    justify-content: center;
+}
+form > input {
+    width: 33%;
+    text-align: center;
+}
+.pokeCard {
+    width:calc(100px + 9vw);
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pokeCard > .titulo {
+    background: rgba(255, 255, 255, 0.65);
+    width:100%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.pokeCard > .divImg {
+    background: rgba(0, 0, 0, 0.2);
+}
+.pokeCard > .datos {
+    background: rgba(255, 255, 255, 0.65);
+    width:100%;
+    font-size: x-large;
+}
+/*Clases que asignaré para los estilos de la carta según el tipo*/
+div.divImg{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+div.divImg > img{
+    width:100%;
+}
+
+.pokeId {
+    text-align: center;
+    font-weight: 600;
+}
+.pokeType{
+    text-align: center;
+}
+/* Nombre del stat */
+#statName{
+    font-weight: 600;
+}
+/*Tipo dragon*/
+.dragon {
+    background: linear-gradient(110deg, #5691df 0%, #082d5c 100%);
+    box-shadow: 0 5px 20px -10px #cff5f6;
+
+}
+
+.dragon > .datos > .pokeType {
+    color:black;
+    background-image: url(imgs/dragon.jpg);
+    background-size: cover;
+    background-color: #4b9efd;
+}
+.dragonPokeType {
+    color:black;
+    background-image: url(imgs/dragon.jpg);
+    background-size: cover;
+    background-color: #4b9efd;
+}
+
+/*Tipo fantasma*/
+.ghost {
+    background: linear-gradient(110deg, #665f72 0%, #170831 100%);
+    box-shadow: 0 5px 20px -10px #ddcff6;
+}
+.ghost > .datos > .pokeType {
+    color:white;
+    background-image: url(imgs/ghost.jpg);
+    background-size: cover;
+    background-color: #493362;
+}
+.ghostPokeType {
+    color:white;
+    background-image: url(imgs/ghost.jpg);
+    background-size: cover;
+    background-color: #493362;
+}
+/*Tipo normal*/
+.normal {
+    background: linear-gradient(110deg, #FDBB2D 0%, #494948 100%);
+    box-shadow: 0 5px 20px -10px #fffccd;
+}
+.normal > .datos > .pokeType {
+    background-color: rgb(107, 98, 72);
+    background-image: url(imgs/normal.jpg);
+    background-size: cover;
+}
+.normalPokeType {
+    background-color: rgb(107, 98, 72);
+    background-image: url(imgs/normal.jpg);
+    background-size: cover;
+}
+/*Tipo agua*/
+.water {
+    background: linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
+    box-shadow: 0 5px 20px -10px #000851;
+}
+.water > .datos > .datos > .pokeType {
+    background-color: #1CB5E0;
+    background-image: url(imgs/water.jpg);
+    background-size: cover;
+}
+.waterPokeType {
+    background-color: #1CB5E0;
+    background-image: url(imgs/water.jpg);
+    background-size: cover;
+}
+/*Tipo Eléctrico*/
+.electric {
+    background: linear-gradient(90deg, rgba(255,222,0,1) 34%, rgba(232,255,153,1) 83%);
+    box-shadow: 0 5px 20px -10px rgb(255, 254, 167);
+}
+.electric > .datos > .pokeType {
+    background-color: rgb(173, 156, 0);
+    background-image: url(imgs/electric.jpg);
+    background-size: cover;
+    color:white;
+}
+.electricPokeType {
+    background-color: rgb(173, 156, 0);
+    background-image: url(imgs/electric.jpg);
+    background-size: cover;
+}
+/*Tipo fuego*/
+.fire {
+    background: linear-gradient(0deg, rgba(199,24,0,1) 10%, rgba(252,194,69,1) 100%);
+    box-shadow: 0 5px 20px -10px rgb(255, 167, 167);
+}
+.fire > .datos > .pokeType {
+    color:white;
+    background-color: rgba(199,24,0,1);
+    background-image: url(imgs/fire.jpg);
+    background-size: cover;
+}
+.firePokeType {
+    color:white;
+    background-color: rgba(199,24,0,1);
+    background-image: url(imgs/fire.jpg);
+    background-size: cover;
+}
+/*Tipo Psíquico*/
+.psychic {
+    background: linear-gradient(140deg, rgba(255,167,249,1) 0%, rgba(255,44,195,1) 39%, rgba(255,227,167,1) 100%);
+    box-shadow: 0 5px 20px -10px rgba(255,167,249,1);
+}
+.psychic > .datos > .pokeType {
+    color:white;
+    background: #ff2cc3;
+    background-image: url(imgs/psychic.jpg);
+    background-size: cover;
+}
+.psychicPokeType {
+    color:white;
+    background: #ff2cc3;
+    background-image: url(imgs/psychic.jpg);
+    background-size: cover;
+
+}
+/* Tipo siniestro */
+.dark {
+    background: linear-gradient(20deg, rgba(25,25,25,1) 0%, rgb(31, 14, 32) 33%, rgb(49, 24, 44) 100%);
+    box-shadow: 0 5px 20px -10px #4d424a;
+}
+.dark > .datos > .pokeType {
+    color:white;
+    background: #20151e;
+    background-image: url(imgs/dark.jpg);
+    background-size: cover;
+
+}
+.darkPokeType {
+    color:white;
+    background: #1a1017;
+    background-image: url(imgs/dark.jpg);
+    background-size: cover;
+
+}
+/*Tipo Planta*/
+.grass {
+    background: linear-gradient(140deg, rgb(119, 218, 61) 0%, rgb(55, 127, 14) 69%, rgb(17, 80, 9) 100%);
+    box-shadow: 0 5px 20px -10px #7deb6f;
+}
+.grass > .datos > .pokeType {
+    color:white;
+    background: #547f0e;
+    background-image: url(imgs/grass.jpg);
+    background-size: cover;
+
+}
+.grassPokeType {
+    color:white;
+    background: #547f0e;
+    background-image: url(imgs/grass.jpg);
+    background-size: cover;
+
+}
+
+/*Tipo Hielo*/
+.ice {
+    background: linear-gradient(230deg, rgba(202,234,246,1) 0%, rgba(160,234,241,1) 46%, rgba(111,184,235,1) 100%);
+    box-shadow: 0 5px 20px -10px #6fb8eb;
+}
+.ice > .datos > .pokeType {
+    color:black;
+    background: #6fb8eb;
+    background-image: url(imgs/ice.jpg);
+    background-size: cover;
+}
+.icePokeType {
+    color:black;
+    background: #6fb8eb;
+    background-image: url(imgs/ice.jpg);
+    background-size: cover;
+}
+/*Tipo Hada*/
+.fairy {
+    background: linear-gradient(45deg, rgba(255,230,240,1) 0%, rgba(255,197,224,1) 34%, rgba(255,166,185,1) 71%, rgba(255,138,149,1) 100%);
+    box-shadow: 0 5px 20px -10px #ff8a95;
+}
+.fairy > .datos > .pokeType {
+    color:black;
+    background: #ff8a95;
+    background-image: url(imgs/fairy.jpg);
+    background-size: cover;
+}
+.fairyPokeType {
+    color:black;
+    background: #ff8a95;
+    background-image: url(imgs/fairy.jpg);
+    background-size: cover;
+}
+/*Tipo Veneno*/
+.poison {
+    background: linear-gradient(45deg, rgb(80, 15, 97) 0%, rgb(128, 30, 167)  34%, rgb(217, 90, 255) 71%, rgb(211, 136, 251) 100%);
+    box-shadow: 0 5px 20px -10px #d3c2dd;
+}
+.poison > .datos > .pokeType {
+    color:white;
+    background: #4c1b5f;
+    background-image: url(imgs/poison.jpg);
+    background-size: cover;
+}
+.poisonPokeType {
+    color:white;
+    background: #4c1b5f;
+    background-image: url(imgs/poison.jpg);
+    background-size: cover;
+}
+
+/*Tipo Volador*/
+.flying {
+    background: linear-gradient(120deg, #c7f3ff 0%, #aab3ff 100%);
+    box-shadow: 0 5px 20px -10px #a5adf8;
+}
+.flying > .datos > .datos > .pokeType {
+    color:black;
+    background-color: #a7e7f8;
+    background-image: url(imgs/flying.jpg);
+    background-size: cover;
+}
+.flyingPokeType {
+    color:black;
+    background: #a7e7f8;
+    background-image: url(imgs/flying.jpg);
+    background-size: cover;
+}
+
+/*Tipo Acero*/
+.steel {
+    background: linear-gradient(120deg, #afafaf 0%, #626262 100%);
+    box-shadow: 0 5px 20px -10px #c2c5dd;
+}
+.steel > .datos > .datos > .pokeType {
+    color:white;
+    background-color: #708186;
+    background-image: url(imgs/steel.jpg);
+    background-size: cover;
+}
+
+.steelPokeType {
+    color:white;
+    background: #708186;
+    background-image: url(imgs/steel.jpg);
+    background-size: cover;
+}
+/*Tipo Bicho*/
+.bug {
+    background: linear-gradient(140deg, rgb(194, 218, 61) 0%, rgb(87, 127, 14) 69%, rgb(49, 80, 9) 100%);
+    box-shadow: 0 5px 20px -10px #b5eb6f;
+}
+.bug > .datos > .pokeType {
+    color:white;
+    background: #5d7f0e;
+    background-image: url(imgs/bug.jpg);
+    background-size: cover;
+}
+
+.bugPokeType {
+    color:white;
+    background-color: #5d7f0e;
+    background-image: url(imgs/bug.jpg);
+    background-size: cover;
+}
+
+/*Tipo Roca*/
+.rock {
+    background: linear-gradient(140deg, rgb(126, 109, 86) 0%, rgb(127, 87, 14) 69%, rgb(80, 58, 9) 100%);
+    box-shadow: 0 5px 20px -10px #ebb56f;
+}
+.rock > .datos > .pokeType {
+    color:black;
+    background: #817126;
+    background-image: url(imgs/rock.jpg);
+    background-size: cover;
+}
+
+.rockPokeType {
+    color:black;
+    background: #817126;
+    background-image: url(imgs/rock.jpg);
+    background-size: cover;
+}
+
+/* Tipo Tierra */
+.ground {
+    background: linear-gradient(140deg, rgb(194, 125, 80) 0%, rgb(212, 136, 50) 69%, rgb(202, 112, 39) 100%);
+    box-shadow: 0 5px 20px -10px #dfaa65;
+}
+.ground > .datos > .pokeType {
+    color:black;
+    background: #816126;
+    background-image: url(imgs/ground.jpg);
+    background-size: cover;
+}
+
+.groundPokeType {
+    color:black;
+    background: #816126;
+    background-image: url(imgs/ground.jpg);
+    background-size: cover;
+}
+
+/*Tipo Lucha*/
+.fighting {
+    background: linear-gradient(0deg, rgb(204, 94, 42) 10%, rgb(90, 55, 22) 100%);
+    box-shadow: 0 5px 20px -10px rgb(255, 192, 167);
+}
+.fighting  > .datos > .pokeType {
+    color:black;
+    font-weight: 600;
+    background-color: rgb(206, 129, 57);
+    background-image: url(imgs/fighting.jpg);
+    background-size: cover;
+}
+.fightingPokeType {
+    color:black;
+    font-weight: 600;
+    background-color: rgb(206, 129, 57);
+    background-image: url(imgs/fighting.jpg);
+    background-size: cover;
+}

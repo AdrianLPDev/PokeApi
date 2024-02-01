@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_jQuery-AdrianLP PokeAPI</title>
+    <!-- Importamos la fuente del título de 'PoKéMoN' para el h1 -->
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>PoKéMoN</h1>
+            <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png" alt="logo" />
+        </header>
+        <form action="">
+            <input type="text" name="pokemon" id="pokemon" autocomplete="off" placeholder="Búsqueda por nº o nombre: Ej: [493] // [Pikachu]">
+        </form>
+        <div name="pokeCard" id="pokeCard" class="pokeCard">
+            <div name="pokedex" class="titulo">Pokedex</div>
+            <div name="divImg" class="divImg">
+                <img src="imgs/Pikachu.png" mame="pokeImg" alt="pokeImg" />
+            </div>
+            <div class="datos">
+                <div name="pokeId" class="pokeId"></div>
+                <div name="pokeType" class="pokeType"></div>
+                <div name="pokeStats" class="pokeStats"></div>
+            </div>
+        </div>
+        <div name="pokeMoves" id="pokeMoves" class="pokeMoves">
+            <div class="datos">
+                <div name="pokeMoveId" class="pokeMoveId"></div>
+                <div name="pokeMoveType" class="pokeMoveType"></div>
+                <div name="pokeMoveStats" class="pokeMoveStats"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- importar jQuery online -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- importar jQuery de forma local -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- Importar nuestro JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
